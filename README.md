@@ -17,6 +17,15 @@ Finally, a short summary of the article can be posted along with the
 article link to better inform the reader on whether the article is
 worth reading.
 
+# Getting Started
+
+We use [Docker](https://www.docker.com/) for deployment.
+
+```bash
+docker build -t telegram-rss .
+docker run telegram-rss
+```
+
 # Features
 - [ ] Manage RSS Feeds
 - [ ] Learn user preferences
