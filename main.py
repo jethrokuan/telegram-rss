@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 """Description will go here."""
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import configparser
 import logging
 
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO)
 
 logger = logging.getLogger(__name__)
+
 
 # Define a few command handlers. These usually take the two arguments bot and
 # update. Error handlers also receive the raised TelegramError object in error.
@@ -40,8 +41,8 @@ if __name__ == '__main__':
 
     try:
         token = config["Telegram"]["Token"]
-    except:
-        raise ValueError("Token not passed.")
+    except KeyError:
+        raise KeyError("Token not passed.")
 
     updater = Updater(token)
 
